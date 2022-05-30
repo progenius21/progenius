@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'progenius',
+    title: 'Professional Genius',
     htmlAttrs: {
       lang: 'en',
     },
@@ -35,6 +35,7 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/device',
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios

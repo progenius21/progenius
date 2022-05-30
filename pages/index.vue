@@ -1,19 +1,37 @@
 <template>
-  <div @keydown="handleScrollEvent" @mousewheel.prevent="handleScrollEvent">
+  <div @keydown="handleScrollEvent" @mousewheel="handleScrollEvent">
     <div>
       <Navigation class="fixed top-0 z-99 left-0" />
       <Home />
       <About />
+      <About2 />
+      <About3 />
       <Pricing />
       <Faqs />
       <Contact />
     </div>
     <div
-      class="bullets hidden"
-      :class="{ light: ['#about', '#pricing'].indexOf($route.hash) > -1 }"
+      class="bullets hidden lg:block"
+      :class="{
+        light: ['#about', '#faqs', '#about_c'].indexOf($route.hash) > -1,
+      }"
     >
       <NuxtLink to="/"></NuxtLink>
       <NuxtLink to="/#about"></NuxtLink>
+      <NuxtLink
+        to="#about_b"
+        :class="{
+          'nuxt-link-exact-active ':
+            ['#about_b'].indexOf(this.$route.hash) > -1,
+        }"
+      ></NuxtLink>
+      <NuxtLink
+        to="#about_c"
+        :class="{
+          'nuxt-link-exact-active ':
+            ['#about_c'].indexOf(this.$route.hash) > -1,
+        }"
+      ></NuxtLink>
       <NuxtLink to="#pricing"></NuxtLink>
       <NuxtLink to="#faqs"></NuxtLink>
       <NuxtLink to="#contact"></NuxtLink>
@@ -25,16 +43,13 @@ body {
   background-color: black;
   color: white;
 }
-html {
-  scroll-behavior: smooth;
-  overflow: hidden;
-}
 
 .bullets {
   position: fixed;
-  right: 50px;
+  right: 80px;
   top: 50%;
   z-index: 999;
+  transition: border 0.4s;
 }
 .bullets a {
   display: block;
@@ -58,8 +73,24 @@ html {
 export default {
   data: function () {
     return {
-      ids: ['', '#about', '#pricing', '#faqs', '#contact'],
+      isNotMobile: false,
+      ids: [
+        '',
+        '#about',
+        '#about_b',
+        '#about_c',
+        '#pricing',
+        '#faqs',
+        '#contact',
+      ],
       transition: false,
+    }
+  },
+  mounted: function () {
+    this.isNotMobile = window.innerWidth > 600
+    if (this.isNotMobile) {
+      document.documentElement.style.scrollBehavior = 'smooth'
+      document.documentElement.style.overflow = 'hidden'
     }
   },
   methods: {
@@ -82,7 +113,7 @@ export default {
       this.resetTransition(300)
     },
     handleScrollEvent(e) {
-      if (window.innerWidth > 600 && this.transition === false) {
+      if (this.isNotMobile && this.transition === false) {
         if (e.deltaY < -50 || e.keyCode === 38) {
           this.scrollUp()
         } else if (e.deltaY > 50 || e.keyCode === 40) {

@@ -1,31 +1,50 @@
 <template>
   <header
-    class="w-full py-10 bg-transparent"
+    class="w-full py-10 bg-transparent z-10 px-5 lg:pl-32 lg:pr-20"
     :class="{
-      light: ['#about', '#faqs'].indexOf($route.hash) > -1,
+      light:
+        ['#about', '#faqs', '#about_c'].indexOf($route.hash) > -1 ||
+        $route.name === 'Research' ||
+        $route.name === 'articles-slug',
     }"
   >
-    <div class="container m-auto flex justify-between items-center">
+    <div class="flex justify-between items-center">
+      <nuxt-link
+        to="/"
+        v-if="$route.name === 'Research' || $route.name === 'articles-slug'"
+        class="logo flex items-center gap-3 font-bold text-lg"
+      >
+        <img width="64" src="/black_logo.png" alt="Progenius logo" />
+        <span class="text-black">ProfessionalGenius</span>
+      </nuxt-link>
       <div
-        v-if="!$route.hash"
+        v-if="$route.name === 'index' && $route.hash === ''"
         class="logo flex items-center gap-3 font-bold text-lg"
       >
         <img width="64" src="/logo.png" alt="Progenius logo" />
         <span>ProfessionalGenius</span>
       </div>
-      <nav class="flex gap-7">
+      <nav class="hidden md:flex gap-7">
         <NuxtLink class="text-gray-500" to="/">Home</NuxtLink>
-        <NuxtLink class="text-gray-500" to="#about">About</NuxtLink>
-        <NuxtLink class="text-gray-500" to="#pricing">Pricing</NuxtLink>
+        <NuxtLink
+          class="text-gray-500"
+          to="/#about"
+          :class="{
+            'nuxt-link-exact-active ':
+              ['#about_b', '#about_c'].indexOf(this.$route.hash) > -1,
+          }"
+          >About</NuxtLink
+        >
+        <NuxtLink class="text-gray-500" to="/#pricing">Pricing</NuxtLink>
         <NuxtLink class="text-gray-500" to="/research">Research</NuxtLink>
-        <NuxtLink class="text-gray-500" to="#faqs">FAQs</NuxtLink>
-        <NuxtLink class="text-gray-500" to="#contact">Contact</NuxtLink>
+        <NuxtLink class="text-gray-500" to="/#faqs">FAQs</NuxtLink>
+        <NuxtLink class="text-gray-500" to="/#contact">Contact</NuxtLink>
         <!-- <NuxtLink class="text-gray-500" to="/pn">Private Network</NuxtLink> -->
         <!--<NuxtLink class="text-gray-500" to="/education">Education</NuxtLink> -->
       </nav>
       <div class="cta">
         <button
-          class="flex py-3 px-10 items-center gap-5 text-black font-bold rounded-full bg-indigo-700 text-white hover:bg-indigo-500"
+          class="hidden md:flex py-3 px-10 items-center gap-5 text-black font-bold rounded-full bg-indigo-700 text-white hover:bg-indigo-500"
         >
           <img width="32" src="/metamask.svg" />
           <span>Login with Metamask</span>
@@ -34,6 +53,7 @@
     </div>
   </header>
 </template>
+
 <style scoped>
 header a {
   color: #ddd;

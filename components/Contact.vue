@@ -1,10 +1,10 @@
 <template>
   <div
     id="contact"
-    class="contact w-full bg-black text-white flex items-center h-screen"
+    class="bg-black text-white flex items-center py-32 px-5 h-screen lg:px-32"
   >
-    <div class="container m-auto flex items-center justify-between">
-      <div class="hero w-1/3">
+    <div class="relative z-10 flex items-center justify-between">
+      <div class="lg-w-1/2">
         <div class="content">
           <h1 class="text-6xl font-bold">Get in touch.</h1>
           <p class="mt-10 text-lg text-gray-300">
@@ -21,21 +21,7 @@
           </div>
         </div>
       </div>
-      <img src="/dark-animation.gif" alt="" />
+      <img class="hidden lg:block" src="/dark-animation.gif" alt="" />
     </div>
   </div>
 </template>
-<style scoped>
-.scroll {
-  position: absolute;
-  transform: rotate(90deg);
-  text-transform: uppercase;
-}
-
-.bg-gif {
-  background-image: url('/bg.gif');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-</style>

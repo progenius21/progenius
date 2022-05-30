@@ -1,17 +1,17 @@
 <template>
   <div
     id="faqs"
-    class="faqs w-full bg-white text-black flex items-center h-screen"
+    class="bg-white text-black flex items-center py-32 px-5 h-screen lg:pt-20 lg:px-32"
   >
-    <div class="container m-auto flex items-center justify-between">
-      <div class="hero w-1/2">
+    <div class="flex items-center justify-between z-10 relative">
+      <div class="lg:w-1/2">
         <div class="content">
-          <h1 class="text-6xl font-bold mb-10">FAQS</h1>
+          <h1 class="text-5xl font-bold mb-10">Frequently asked questions</h1>
           <div v-for="(faq, index) in faqs" :key="index">
             <div
-              class="cursor-pointer border font-bold border-gray-400 mb-5 p-5 text-left rounded-xl text-xl w-full"
+              class="cursor-pointer border border-gray-300 mb-5 p-5 text-left rounded-xl text-xl w-full"
             >
-              {{ faq.question }}
+              <span class="font-medium">{{ faq.question }}</span>
               <div class="font-normal text-base mt-5 text-gray-600">
                 {{ faq.answer }}
               </div>
@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-      <img class="mt-16" src="/light-animation.gif" alt="" />
+      <img class="hidden lg:block" src="/light-animation.gif" alt="" />
     </div>
   </div>
 </template>

@@ -1,14 +1,17 @@
 <template>
-  <div id="pricing" class="w-full p-10 h-screen bg-black flex items-center">
-    <div class="w-full">
+  <div
+    id="pricing"
+    class="bg-black text-white flex items-center py-32 px-5 min-h-screen lg:px-32"
+  >
+    <div class="relative z-10 w-full">
       <h1 class="text-6xl font-bold mb-20 blurred">Choose your pricing plan</h1>
-      <div class="plans flex gap-5 items-center relative">
+      <div class="plans block lg:flex lg:gap-5 items-center relative">
         <p
           class="bg-red w-full absolute z-10 text-4xl opacity-75 font-bold text-center"
         >
           Coming soon
         </p>
-        <div class="plan blurred bg-gray-900 rounded-xl p-10 w-1/3">
+        <div class="plan blurred bg-gray-900 rounded-xl p-10 w-full lg:w-1/3">
           <h1 class="font-bold text-2xl mb-5">Premium Group</h1>
           <p class="mb-5">
             Trades/ Early Gems, Tips for passive income, Top Giveaways
@@ -20,7 +23,7 @@
             Select plan
           </button>
         </div>
-        <div class="plan blurred bg-indigo-900 rounded-xl p-10 w-1/3">
+        <div class="plan blurred bg-indigo-900 rounded-xl p-10 w-full lg:w-1/3">
           <h1 class="font-bold text-2xl mb-5">Premium Group</h1>
           <p class="mb-5">
             Trades/ Early Gems, Tips for passive income, Top Giveaways
@@ -32,7 +35,7 @@
             Select plan
           </button>
         </div>
-        <div class="plan blurred bg-yellow-900 rounded-xl p-10 w-1/3">
+        <div class="plan blurred bg-yellow-900 rounded-xl p-10 w-full lg:w-1/3">
           <h1 class="font-bold text-2xl mb-5">Premium Group</h1>
           <p class="mb-5">
             Trades/ Early Gems, Tips for passive income, Top Giveaways

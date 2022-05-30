@@ -1,28 +1,31 @@
 <template>
-  <div id="research" class="w-full bg-black h-screen py-32">
-    <div class="container m-auto">
+  <div id="research" class="w-full bg-white min-h-screen py-32">
+    <Navigation class="fixed top-0 z-99 left-0" />
+
+    <div class="p-5 lg:pl-32 lg:pr-20">
       <div>
-        <h1 class="font-bold text-3xl mb-10">Research</h1>
+        <h1 class="font-bold text-3xl mb-10 text-black">Research</h1>
         <img src="/effect.gif" alt="" />
       </div>
       <div class="grid">
-        <div
+        <nuxt-link
+          :to="{ name: 'articles-slug', params: { slug: article.id } }"
           v-for="(article, index) in articles"
           :key="index"
-          class="card transition rounded-2xl overflow-hidden cursor-pointer bg-gray-900 hover:bg-indigo-900"
+          class="card border border-gray-300 transition rounded-md overflow-hidden cursor-pointer bg-white hover:shadow-lg"
         >
           <div class="snapshop-image">
             <img :src="article.snapshot" />
           </div>
           <div class="p-5">
-            <h1 class="font-bold text-lg mb-5 text-uppercase">
+            <h1 class="font-bold text-black text-lg mb-5 text-uppercase">
               {{ article.title }}
             </h1>
-            <p class="desc">
+            <p class="desc text-gray-600">
               {{ article.description }}
             </p>
           </div>
-        </div>
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -50,8 +53,18 @@ export default {
 <style scoped>
 .grid {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
+}
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
 }
 .snapshop-image {
   height: 150px;

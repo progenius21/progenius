@@ -1,10 +1,10 @@
 <template>
   <div
     id="about"
-    class="about w-full bg-white text-black flex items-center h-screen"
+    class="bg-white text-black flex py-32 px-5 items-center h-screen lg:px-32"
   >
-    <div class="container m-auto flex items-center justify-between">
-      <div class="hero w-1/2">
+    <div class="flex items-center justify-between">
+      <div class="lg:w-1/2">
         <div class="content">
           <h1 class="text-6xl font-bold">
             The world is digitising. <br />
@@ -17,35 +17,14 @@
             investors regarding high quality cryptocurrency projects at the
             earliest stages of their development.
           </p>
-          <!-- <div class="actions flex gap-5">
-            <button
-              class="transition mt-10 py-5 px-10 bg-black text-white font-bold rounded-xl hover:bg-gray-900"
-            >
-              Join our community
-            </button>
-            <button
-              class="transition mt-10 py-5 px-10 bg-transparent text-black border border-1 border-black font-bold rounded-xl hover:bg-black hover:text-white"
-            >
-              Learn more
-            </button>
-          </div> -->
+          <button
+            class="transition mt-10 py-5 px-10 font-bold rounded-xl bg-indigo-700 text-white hover:bg-indigo-500"
+          >
+            Contact us
+          </button>
         </div>
       </div>
-      <img src="/light-animation.gif" alt="" />
+      <img class="hidden lg:block" src="/light-animation.gif" alt="" />
     </div>
   </div>
 </template>
-<style scoped>
-.scroll {
-  position: absolute;
-  transform: rotate(90deg);
-  text-transform: uppercase;
-}
-
-.bg-gif {
-  background-image: url('/bg.gif');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-</style>
