@@ -61,7 +61,7 @@ export default {
   background-size: cover;
 }
 
-/* .bg-gif::before {
+.bg-gif::before {
   content: '';
   padding: 7%;
   width: 100%;
@@ -70,7 +70,7 @@ export default {
   position: absolute;
   top: 0%;
   left: 0;
-} */
+}
 
 .quote {
   position: absolute;

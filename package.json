@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "nuxt",
     "build": "nuxt build",
-    "start": "npm start -- --hostname 0.0.0.0",
+    "start": "npm start",
     "generate": "nuxt generate",
     "lint:prettier": "prettier --check .",
     "lint": "yarn lint:prettier",
