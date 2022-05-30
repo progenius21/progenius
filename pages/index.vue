@@ -1,7 +1,7 @@
 <template>
   <div @keydown="handleScrollEvent" @mousewheel="handleScrollEvent">
     <div>
-      <Navigation class="lg:fixed lg:top-0 z-99 left-0" />
+      <Navigation class="relative lg:fixed lg:top-0 z-99 left-0" />
       <Home />
       <About />
       <About2 />
