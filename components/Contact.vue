@@ -2,7 +2,7 @@
   <div>
     <contact-popup v-if="showPopup" @closed="showPopup = false" />
     <!-- prettier-ignore -->
-    <section id="contact" class="w-full h-screen bg-black overflow-hidden py-32 px-5 lg:px-32 bg-gif flex flex-col-reverse lg:flex-row justify-between items-end text-white">
+    <section id="contact" class="w-full h-screen bg-black overflow-hidden py-16 px-5 lg:px-32 bg-gif flex flex-col-reverse lg:flex-row justify-between items-end text-white">
     <div class="prose lg:prose-xl prose-invert z-10 h-2/3 relative mt-16 lg:mt-0">
       <h1>Get in touch<span class="text-indigo-700">.</span></h1>
       <p>If you are as curious as we are, building something interesting that the space needs, and looking for a partner who will strive to make it a success, get in touch. We'd love to collaborate.</p>
