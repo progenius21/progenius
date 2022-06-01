@@ -13,7 +13,7 @@
 </template>
 <script>
 import lottie from 'vue-lottie/src/lottie.vue'
-import * as animationData from '~/static/animation.json'
+import * as animationData from '~/static/animation_circle.json'
 
 export default {
   components: {
