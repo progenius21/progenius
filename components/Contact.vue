@@ -21,7 +21,7 @@
         <p class="text-sm">© 2022 ProfessionalGenius | Privacy Policy</p>
       </div>
     </div>
-    <div class="w-full lg:w-1/3">
+    <div class="w-full lg:w-1/3 hidden lg:block">
       <lottie  :options="lottieOptions" v-on:animCreated="handleAnimation" />
     </div>
   </section>

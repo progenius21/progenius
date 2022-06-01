@@ -12,8 +12,9 @@
         </div>
       </div>
     </div>
-    <lottie class="hidden lg:block w-1/2" :options="lottieOptions" v-on:animCreated="handleAnimation" />
-  </section>
+    <div class="hidden lg:block w-full lg:w-1/3">
+      <lottie  :options="lottieOptions" v-on:animCreated="handleAnimation" />
+    </div>  </section>
 </template>
 <script>
 import lottie from 'vue-lottie/src/lottie.vue'
