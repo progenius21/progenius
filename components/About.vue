@@ -6,7 +6,9 @@
       <p>Professional Genius aims to educate anyone and everyone, whatever their level of experience, about cryptocurrency and its importance. ProGenius also strives to provide top quality information for avid investors regarding high quality cryptocurrency projects at the earliest stages of their development.</p>
       <nuxt-link to="/#contact"><button class="py-3 px-10 flex gap-5 items-center justify-between rounded-full transition bg-indigo-700 hover:bg-indigo-500 text-white font-bold">Contact us</button></nuxt-link>
     </div>
-    <lottie :options="lottieOptions" v-on:animCreated="handleAnimation" />
+    <div class="w-full lg:w-1/3">
+      <lottie  :options="lottieOptions" v-on:animCreated="handleAnimation" />
+    </div>
   </section>
 </template>
 <script>

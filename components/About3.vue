@@ -6,7 +6,9 @@
       <p>Join our community to start networking and learning. Join our public telegram with the link below.</p>
       <a to="#" target="_blank"><button class="py-3 px-10 flex gap-5 items-center justify-between rounded-full transition bg-indigo-700 hover:bg-indigo-500 text-white font-bold">Join our community</button></a>
     </div>
-    <lottie class="w-1/2" :options="lottieOptions" v-on:animCreated="handleAnimation" />
+    <div class="w-full lg:w-1/3">
+      <lottie  :options="lottieOptions" v-on:animCreated="handleAnimation" />
+    </div>
   </section>
 </template>
 <script>

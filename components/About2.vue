@@ -6,7 +6,9 @@
       <p>Here at Professional Genius (PG), We are more than just investors. We are a group of highly-skilled, result-orientated individuals from various professional backgrounds all working towards educating and empowering our community.</p>
       <button class="block py-3 px-10 flex gap-5 items-center justify-between rounded-full transition bg-indigo-700 hover:bg-indigo-500 text-white font-bold">Join our community</button>
     </div>
-    <lottie class="w-1/2" :options="lottieOptions" v-on:animCreated="handleAnimation" />
+    <div class="w-full lg:w-1/3">
+      <lottie  :options="lottieOptions" v-on:animCreated="handleAnimation" />
+    </div>
   </section>
 </template>
 <script>
