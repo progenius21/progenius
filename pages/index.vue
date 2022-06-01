@@ -43,7 +43,9 @@ body {
   background-color: black;
   color: white;
 }
-
+a {
+  text-decoration: none;
+}
 .bullets {
   position: fixed;
   right: 80px;
