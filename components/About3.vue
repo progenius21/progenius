@@ -1,6 +1,6 @@
 <template>
   <!-- prettier-ignore -->
-  <section id="about_c" class="w-full h-screen bg-white overflow-hidden py-32 px-5 lg:px-32 bg-gif flex flex-col lg:flex-row justify-between items-center text-black">
+  <section id="about_c" class="w-full min-h-screen bg-white overflow-hidden py-32 px-5 lg:px-32 bg-gif flex flex-col lg:flex-row justify-between items-center text-black">
     <div class="prose lg:prose-xl z-10 mt-32">
       <h1>Are You Ready For The Digital Age?</h1>
       <p>Join our community to start networking and learning. Join our public telegram with the link below.</p>

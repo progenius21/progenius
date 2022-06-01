@@ -1,6 +1,6 @@
 <template>
   <!-- prettier-ignore -->
-  <section id="faqs" class="w-full h-screen bg-white overflow-hidden py-32 px-5 lg:px-32 bg-gif flex flex-col lg:flex-row justify-between items-center text-black">
+  <section id="faqs" class="w-full min-h-screen bg-white overflow-hidden py-32 px-5 lg:px-32 bg-gif flex flex-col lg:flex-row justify-between items-center text-black">
     <div class="prose lg:prose-xl z-10 mt-32">
       <h1>Frequently asked questions<span class="text-indigo-700 ">.</span></h1>
       <div v-for="(faq, index) in faqs" :key="index">
@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <lottie class="w-1/2" :options="lottieOptions" v-on:animCreated="handleAnimation" />
+    <lottie class="hidden lg:block w-1/2" :options="lottieOptions" v-on:animCreated="handleAnimation" />
   </section>
 </template>
 <script>
