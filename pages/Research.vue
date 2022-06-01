@@ -1,6 +1,6 @@
 <template>
   <div id="research" class="w-full bg-white min-h-screen py-32">
-    <Navigation class="fixed top-0 z-99 left-0" />
+    <Navigation class="fixed top-0 left-0" />
 
     <div class="p-5 lg:pl-32 lg:pr-20">
       <div>

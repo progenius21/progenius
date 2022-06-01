@@ -1,7 +1,7 @@
 <template>
   <div @keydown="handleScrollEvent" @mousewheel="handleScrollEvent">
     <div>
-      <Navigation class="relative lg:fixed lg:top-0 z-99 left-0" />
+      <Navigation class="fixed top-0 left-0" />
       <Home />
       <About />
       <About2 />
@@ -88,11 +88,13 @@ export default {
   },
   mounted: function () {
     this.isNotMobile = window.innerWidth > 600
+
     if (this.isNotMobile) {
       document.documentElement.style.scrollBehavior = 'smooth'
       document.documentElement.style.overflow = 'hidden'
     }
   },
+
   methods: {
     resetTransition(delay) {
       setTimeout(() => {
@@ -113,6 +115,9 @@ export default {
       this.resetTransition(300)
     },
     handleScrollEvent(e) {
+      if (this.isNotMobile) {
+        e.preventDefault()
+      }
       if (this.isNotMobile && this.transition === false) {
         if (e.deltaY < -50 || e.keyCode === 38) {
           this.scrollUp()

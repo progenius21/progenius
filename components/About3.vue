@@ -3,7 +3,7 @@
     id="about_c"
     class="bg-white text-black flex py-32 px-5 items-center h-screen lg:px-32"
   >
-    <div class="flex items-center justify-between">
+    <div class="flex items-center justify-between w-full">
       <div class="lg:w-1/2">
         <div class="content">
           <h1 class="text-6xl font-bold">Are You Ready For The Digital Age?</h1>

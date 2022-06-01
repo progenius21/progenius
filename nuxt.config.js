@@ -1,3 +1,5 @@
+import tailwindTypography from '@tailwindcss/typography'
+
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -28,7 +30,11 @@ export default {
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
   ],
-
+  tailwindcss: {
+    config: {
+      plugins: [tailwindTypography]
+    }
+  },
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     // https://go.nuxtjs.dev/axios
