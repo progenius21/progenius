@@ -1,6 +1,6 @@
 <template>
   <!-- prettier-ignore -->
-  <section class="fixed top-0 bottom-0 right-0 z-50 w-full lg:w-1/3 min-h-screen m-auto py-15 p-5 lg:px-16 bg-white text-black">
+  <section class="fixed top-0 bottom-0 right-0 z-50 w-full lg:w-1/3 min-h-screen overflow-scroll m-auto py-15 p-5 lg:px-16 bg-white text-black">
     <div class="flex justify-between items-center ">
       <h1 v-if="!submitted" class="text-4xl font-bold">
         Contact us
