@@ -1,32 +1,32 @@
 <template>
-  <div
-    id="faqs"
-    class="bg-white text-black flex items-center py-32 px-5 h-screen lg:pt-20 lg:px-32"
-  >
-    <div class="flex items-center justify-between relative">
-      <div class="lg:w-1/2">
-        <div class="content">
-          <h1 class="text-5xl font-bold mb-10">Frequently asked questions</h1>
-          <div v-for="(faq, index) in faqs" :key="index">
-            <div
-              class="cursor-pointer border border-gray-300 mb-5 p-5 text-left rounded-xl text-xl w-full"
-            >
-              <span class="font-medium">{{ faq.question }}</span>
-              <div class="font-normal text-base mt-5 text-gray-600">
-                {{ faq.answer }}
-              </div>
-            </div>
+  <!-- prettier-ignore -->
+  <section id="faqs" class="w-full h-screen bg-white overflow-hidden py-32 px-5 lg:px-32 bg-gif flex flex-col lg:flex-row justify-between items-center text-black">
+    <div class="prose lg:prose-xl z-10 mt-32">
+      <h1>Frequently asked questions<span class="text-indigo-700 ">.</span></h1>
+      <div v-for="(faq, index) in faqs" :key="index">
+        <div class="cursor-pointer border border-gray-300 mb-5 p-5 text-left rounded-xl text-xl w-full">
+          <span class="font-medium">{{ faq.question }}</span>
+          <div class="font-normal text-base mt-5 text-gray-600">
+            {{ faq.answer }}
           </div>
         </div>
       </div>
-      <img class="hidden lg:block" src="/light-animation.gif" alt="" />
     </div>
-  </div>
+    <lottie class="w-1/2" :options="lottieOptions" v-on:animCreated="handleAnimation" />
+  </section>
 </template>
 <script>
+import lottie from 'vue-lottie/src/lottie.vue'
+import * as animationData from '~/static/animation.json'
+
 export default {
-  data: function () {
+  components: {
+    lottie,
+  },
+  data() {
     return {
+      anim: null, // for saving the reference to the animation
+      lottieOptions: { animationData: animationData.default },
       faqs: [
         {
           question: 'What is progenius Private Network?',
@@ -49,6 +49,11 @@ export default {
         },
       ],
     }
+  },
+  methods: {
+    handleAnimation: function (anim) {
+      this.anim = anim
+    },
   },
 }
 </script>

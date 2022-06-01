@@ -58,10 +58,9 @@ body {
   margin-bottom: 10px;
   border-radius: 100px;
   border: 1px solid white;
+  background: rgba(0, 0, 0, 0.3);
 }
-.bullets.light a {
-  border-color: black;
-}
+
 .bullets a.nuxt-link-exact-active {
   background: white;
 }

@@ -1,29 +1,26 @@
 <template>
-  <div
-    class="fixed lg:absolute bottom-0 right-0 z-50 w-full lg:w-1/3 h-screen m-auto py-16 p-5 lg:px-16 bg-white text-black"
-  >
-    <div class="flex justify-between items-center mb-16">
-      <h1 v-if="!submitted" class="text-4xl lg:text-6xl font-bold">
-        Get in touch.
+  <!-- prettier-ignore -->
+  <section class="fixed top-0 bottom-0 right-0 z-50 w-full lg:w-1/3 h-screen m-auto py-15 p-5 lg:px-16 bg-white text-black">
+    <div class="flex justify-between items-center ">
+      <h1 v-if="!submitted" class="text-4xl font-bold">
+        Contact us
       </h1>
       <div v-else></div>
-      <span @click="$emit('closed')" class="cursor-pointer text-xl font-bold"
-        >X Close
-      </span>
+      <button @click="$emit('closed')" class="cursor-pointer p-3 hover:bg-gray-100 border border-gray-500 rounded-full"><svg width="32" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="eva eva-close-outline" fill="inherit"><g data-name="Layer 2"><g data-name="close"><rect width="24" height="24" transform="rotate(180 12 12)" opacity="0"></rect><path d="M13.41 12l4.3-4.29a1 1 0 1 0-1.42-1.42L12 10.59l-4.29-4.3a1 1 0 0 0-1.42 1.42l4.3 4.29-4.3 4.29a1 1 0 0 0 0 1.42 1 1 0 0 0 1.42 0l4.29-4.3 4.29 4.3a1 1 0 0 0 1.42 0 1 1 0 0 0 0-1.42z"></path></g></g></svg></button>
     </div>
     <div class="m-auto h-full flex items-center" v-if="submitted">
-      <div class="w-full text-center">
-        <h1 class="text-4xl font-bold">THANK YOU FOR WRITING TO US.</h1>
+      <div class="prose text-center w-full">
+        <h1>THANK YOU FOR WRITING TO US.</h1>
         <p>
           We got your request and within 2 business days, we will get in touch.
         </p>
       </div>
     </div>
-    <form v-else @submit.prevent="submit">
+    <form v-else @submit.prevent="submit" class="mt-16">
       <div class="field">
         <label class="block mb-3" for="fname">Full name</label>
         <input
-          class="w-full block mb-5 border border-gray-400 p-3 rounded"
+          class="w-full block mb-5 border border-gray-400 p-3 rounded-2xl"
           type="text"
           id="fname"
         />
@@ -31,7 +28,7 @@
       <div class="field">
         <label class="block mb-3" for="email">Email</label>
         <input
-          class="w-full block mb-5 border border-gray-400 p-3 rounded"
+          class="w-full block mb-5 border border-gray-400 p-3 rounded-2xl"
           type="email"
           id="email"
         />
@@ -39,7 +36,7 @@
       <div class="field">
         <label class="block mb-3" for="phone">Phone</label>
         <input
-          class="w-full block mb-5 border border-gray-400 p-3 rounded"
+          class="w-full block mb-5 border border-gray-400 p-3 rounded-2xl"
           type="phone"
           id="phone"
         />
@@ -47,7 +44,7 @@
       <div class="field">
         <label class="block mb-3" for="subject">Subject</label>
         <input
-          class="w-full block mb-5 border border-gray-400 p-3 rounded"
+          class="w-full block mb-5 border border-gray-400 p-3 rounded-2xl"
           type="text"
           id="subject"
         />
@@ -55,7 +52,7 @@
       <div class="field">
         <label class="block mb-3" for="message">Message</label>
         <textarea
-          class="w-full block mb-5 border border-gray-400 p-3 rounded"
+          class="w-full block mb-5 border border-gray-400 p-3 rounded-2xl"
           name="message"
           id="message"
           cols="30"
@@ -64,12 +61,12 @@
       </div>
       <button
         type="submit"
-        class="transition mt-10 py-5 px-10 font-bold rounded bg-indigo-700 text-white hover:bg-indigo-500"
+        class="transition mt-10 py-5 px-10 font-bold rounded-full bg-indigo-700 text-white hover:bg-indigo-500"
       >
         Send message
       </button>
     </form>
-  </div>
+  </section>
 </template>
 <script>
 export default {
