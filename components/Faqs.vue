@@ -1,18 +1,18 @@
 <template>
   <!-- prettier-ignore -->
-  <section id="faqs" class="w-full min-h-screen bg-white overflow-hidden py-32 px-5 lg:px-32 bg-gif flex flex-col lg:flex-row justify-between items-center text-black">
-    <div class="prose lg:prose-xl z-10 mt-32">
+  <section id="faqs" class="w-full min-h-screen bg-white overflow-hidden py-16 px-5 lg:px-32 bg-gif flex flex-col lg:flex-row gap-5 justify-between items-center text-black">
+    <div class="prose lg:prose-xl z-10 mt-32 w-1/2">
       <h1 :class="{'animate__animated animate__fadeInDown animate__delay-03s animate__fast': $route.hash === '#faqs'}">Frequently asked questions<span class="text-indigo-700 ">.</span></h1>
-      <div v-for="(faq, index) in faqs" :key="index" :class="{'animate__animated animate__fadeInDown animate__delay-1s animate__fast': $route.hash === '#faqs'}">
-        <div class="cursor-pointer border border-gray-300 mb-5 p-5 text-left rounded-xl text-xl w-full">
+      <div @click="currentQuestion = index" v-for="(faq, index) in faqs" :key="index" :class="{'animate__animated animate__fadeInDown animate__delay-1s animate__fast': $route.hash === '#faqs'}">
+        <div class="cursor-pointer border border-gray-300 mb-5 p-5 text-left rounded-xl  w-full">
           <span class="font-medium">{{ faq.question }}</span>
-          <div class="font-normal text-base mt-5 text-gray-600">
+          <div v-if="index === currentQuestion" class="font-normal text-base mt-5 text-gray-600 animate__animated animate__fadeInDown animate__faster">
             {{ faq.answer }}
           </div>
         </div>
       </div>
     </div>
-    <div class="hidden lg:block w-full lg:w-1/3">
+    <div class="hidden lg:block w-full lg:w-5/12">
       <lottie :class="{'animate__animated animate__fadeIn animate__delay-2s animate__fast': $route.hash === '#faqs'}" :options="lottieOptions" v-on:animCreated="handleAnimation" />
     </div>  </section>
 </template>
@@ -26,6 +26,7 @@ export default {
   },
   data() {
     return {
+      currentQuestion: 0,
       anim: null, // for saving the reference to the animation
       lottieOptions: { animationData: animationData.default },
       faqs: [
