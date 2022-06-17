@@ -99,7 +99,7 @@ export default {
     }
   },
   mounted: function () {
-    this.isNotMobile = window.innerWidth > 600
+    this.isNotMobile = window.innerWidth > 1280
   },
 
   methods: {
