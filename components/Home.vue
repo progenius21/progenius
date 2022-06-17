@@ -2,7 +2,7 @@
   <!-- prettier-ignore -->
   <section id="home" class="w-full min-h-screen overflow-hidden py-32 px-5 lg:px-32 bg-gif flex flex-col lg:flex-row justify-between items-center">
     <div class="prose lg:prose-xl prose-invert z-10 mt-16 lg:mt-32">
-      <h1>Introducing Web3.0, Simply<span class="text-indigo-700 ">.</span></h1>
+      <h1 class="animate__animated animate__bounce">Introducing Web3.0, Simply<span class="text-indigo-700 ">.</span></h1>
       <p>We are more than just investors. We are a group of highly-skilled, result-orientated individuals from various professional backgrounds all working towards educating and empowering our community.</p>
       <!-- Actions -->
       <div class="actions flex gap-5 mt-16">
