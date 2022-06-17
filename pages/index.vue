@@ -59,7 +59,6 @@ a {
   position: fixed;
   right: 80px;
   top: 50%;
-  z-index: 999;
   transition: border 0.4s;
 }
 .bullets a {

@@ -17,42 +17,42 @@
       </div>
     </div>
     <form v-else @submit.prevent="submit" class="mt-16">
-      <div class="field">
-        <label class="block mb-3" for="fname">Full name</label>
+      <div class="field mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="fname">Full name</label>
         <input
-          class="w-full block mb-5 border border-gray-400 p-3 rounded-2xl"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500"
           type="text"
           id="fname"
         />
       </div>
-      <div class="field">
-        <label class="block mb-3" for="email">Email</label>
+      <div class="field mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
         <input
-          class="w-full block mb-5 border border-gray-400 p-3 rounded-2xl"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500"
           type="email"
           id="email"
         />
       </div>
-      <div class="field">
-        <label class="block mb-3" for="phone">Phone</label>
+      <div class="field mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">Phone</label>
         <input
-          class="w-full block mb-5 border border-gray-400 p-3 rounded-2xl"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500"
           type="phone"
           id="phone"
         />
       </div>
-      <div class="field">
-        <label class="block mb-3" for="subject">Subject</label>
+      <div class="field mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="subject">Subject</label>
         <input
-          class="w-full block mb-5 border border-gray-400 p-3 rounded-2xl"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500"
           type="text"
           id="subject"
         />
       </div>
-      <div class="field">
-        <label class="block mb-3" for="message">Message</label>
+      <div class="field mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
         <textarea
-          class="w-full block mb-5 border border-gray-400 p-3 rounded-2xl"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500"
           name="message"
           id="message"
           cols="30"
