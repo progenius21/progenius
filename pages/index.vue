@@ -43,11 +43,7 @@ html {
   overflow: hidden;
   scroll-behavior: smooth;
 }
-@media (max-width: 1280px){
-  html {
-    overflow: unset;
-  }
-}
+
 body {
   background-color: black;
   color: white;
@@ -100,6 +96,9 @@ export default {
   },
   mounted: function () {
     this.isNotMobile = window.innerWidth > 1280
+    if(this.deviceType != 'desktop') {
+      document.documentElement.style.overflow = 'unset'
+    }
   },
   computed: {
     deviceType: function () {
@@ -132,10 +131,10 @@ export default {
       this.resetTransition(300)
     },
     handleScrollEvent(e) {
-      if (this.deviceType != 'mobile') {
+      if (this.deviceType == 'desktop') {
         e.preventDefault()
       }
-      if (this.deviceType != 'mobile' && this.transition === false) {
+      if (this.deviceType == 'desktop' && this.transition === false) {
         if (e.deltaY < -50 || e.keyCode === 38) {
           this.scrollUp()
         } else if (e.deltaY > 50 || e.keyCode === 40) {
