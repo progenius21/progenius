@@ -54,7 +54,6 @@ export default {
   methods: {
     updateShowLogo: function (e) {
       this.showLogo = e.path[1].scrollY < 100
-      console.log(e.path[1].scrollY < 100)
     },
   },
 }

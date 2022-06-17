@@ -16,7 +16,7 @@
       <!-- End Actions -->
     </div>
     <div class="h-full flex items-end to-btm" >
-      <div class="block mg:hidden" :class="{'animate__animated animate__fadeInDown animate__delay-2s animate__fast': !$route.hash}">
+      <div class="block md:hidden lg:block" :class="{'animate__animated animate__fadeInDown animate__delay-2s animate__fast': !$route.hash}">
         <p class="text-lg">"Don't let your learning lead to knowledge, let your learning lead to action."</p>
         <p class="text-xl mt-3 font-bold">Jim Rohn</p>
       </div>
@@ -46,10 +46,10 @@
   left: 0;
 }
 
-/* @media (min-width: 800px) {
+@media (min-width: 800px) {
   .to-btm{
     margin-top: 35%;
   }
-} */
+}
 
 </style>
