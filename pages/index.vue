@@ -101,7 +101,17 @@ export default {
   mounted: function () {
     this.isNotMobile = window.innerWidth > 1280
   },
-
+  computed: {
+    deviceType: function () {
+      if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(navigator.userAgent)) {
+        return "tablet";
+      }
+      else if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(navigator.userAgent)) {
+          return "mobile";
+      }
+      return "desktop";
+    }
+  },
   methods: {
     resetTransition(delay) {
       setTimeout(() => {
@@ -122,10 +132,10 @@ export default {
       this.resetTransition(300)
     },
     handleScrollEvent(e) {
-      if (this.isNotMobile) {
+      if (this.deviceType != 'mobile') {
         e.preventDefault()
       }
-      if (this.isNotMobile && this.transition === false) {
+      if (this.deviceType != 'mobile' && this.transition === false) {
         if (e.deltaY < -50 || e.keyCode === 38) {
           this.scrollUp()
         } else if (e.deltaY > 50 || e.keyCode === 40) {
