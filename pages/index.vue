@@ -43,7 +43,7 @@ html {
   overflow: hidden;
   scroll-behavior: smooth;
 }
-@media (max-width: 600px){
+@media (max-width: 1280px){
   html {
     overflow: unset;
   }
