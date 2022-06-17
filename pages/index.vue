@@ -39,12 +39,21 @@
   </div>
 </template>
 <style>
+html {
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+@media (max-width: 600px){
+  html {
+    overflow: unset;
+  }
+}
 body {
   background-color: black;
   color: white;
 }
 a {
-  text-decoration: none;
+  text-decoration: none!important;
 }
 .bullets {
   position: fixed;
@@ -69,6 +78,9 @@ a {
 .bullets.light a.nuxt-link-exact-active {
   background: black;
 }
+.animate__delay-03s{
+  animation-delay: .5s;
+}
 </style>
 <script>
 export default {
@@ -89,11 +101,6 @@ export default {
   },
   mounted: function () {
     this.isNotMobile = window.innerWidth > 600
-
-    if (this.isNotMobile) {
-      document.documentElement.style.scrollBehavior = 'smooth'
-      document.documentElement.style.overflow = 'hidden'
-    }
   },
 
   methods: {

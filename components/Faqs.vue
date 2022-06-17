@@ -2,8 +2,8 @@
   <!-- prettier-ignore -->
   <section id="faqs" class="w-full min-h-screen bg-white overflow-hidden py-32 px-5 lg:px-32 bg-gif flex flex-col lg:flex-row justify-between items-center text-black">
     <div class="prose lg:prose-xl z-10 mt-32">
-      <h1>Frequently asked questions<span class="text-indigo-700 ">.</span></h1>
-      <div v-for="(faq, index) in faqs" :key="index">
+      <h1 :class="{'animate__animated animate__fadeInDown animate__delay-03s animate__fast': $route.hash === '#faqs'}">Frequently asked questions<span class="text-indigo-700 ">.</span></h1>
+      <div v-for="(faq, index) in faqs" :key="index" :class="{'animate__animated animate__fadeInDown animate__delay-1s animate__fast': $route.hash === '#faqs'}">
         <div class="cursor-pointer border border-gray-300 mb-5 p-5 text-left rounded-xl text-xl w-full">
           <span class="font-medium">{{ faq.question }}</span>
           <div class="font-normal text-base mt-5 text-gray-600">
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="hidden lg:block w-full lg:w-1/3">
-      <lottie  :options="lottieOptions" v-on:animCreated="handleAnimation" />
+      <lottie :class="{'animate__animated animate__fadeIn animate__delay-2s animate__fast': $route.hash === '#faqs'}" :options="lottieOptions" v-on:animCreated="handleAnimation" />
     </div>  </section>
 </template>
 <script>
@@ -32,7 +32,7 @@ export default {
         {
           question: 'What is progenius Private Network?',
           answer:
-            'A private community of KOLs (Key Opinion Leaders), and Blockchain enthusiasts contributing to development, stealth and public projects within the blockchain space.',
+            'A private community of KOLs (Key Opinion Leaders), and Blockchain enthusiasts, contributing to development, stealth and public projects within the blockchain space',
         },
         {
           question: 'What is the Pro Genius referral program?',
@@ -46,7 +46,7 @@ export default {
         {
           question: 'What conditions must be met for me to join the group?',
           answer:
-            'You must complete the PG membership form to be considered. Due to the exclusivity of PG, you will be required to present what value you can add/offer to the group. You will be held accountable for the terms and conditions of the group.',
+            'You must complete the PG membership form to be considered. Due to the exclusivity of PG, you will be required to present what value you can add/offer to the group. You will be held accountable to the terms and conditions of the group.',
         },
       ],
     }

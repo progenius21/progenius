@@ -2,8 +2,8 @@
   <!-- prettier-ignore -->
   <header class="w-full z-30 p-5 flex justify-between items-center lg:pl-32 lg:pr-20" :class="{'flex-row-reverse lg:flex-row': !showLogo}">
     <div v-if="showLogo" class="brand flex items-center gap-3">
-      <img v-if="$route.name === 'Research' || $route.name === 'articles-slug'" width="64" src="/black_logo.png" alt="" />
-      <img v-else width="64" src="/logo.png" alt="" />
+      <nuxt-link v-if="$route.name === 'Research' || $route.name === 'articles-slug'" to="/"><img  width="64" src="/black_logo.png" alt="" /></nuxt-link>
+      <nuxt-link  v-else to="/"><img width="64" src="/logo.png" alt="" /></nuxt-link>
       <span class="hidden lg:block text-xl font-bold" :class="($route.name === 'Research' || $route.name === 'articles-slug') ? 'text-black':'text-white'">ProfessionalGenius</span>
     </div>
     <nav class="hidden lg:flex gap-7" :class="{ light: ['#about', '#faqs', '#about_c'].indexOf($route.hash) > -1 || $route.name === 'Research' || $route.name === 'articles-slug' }">
