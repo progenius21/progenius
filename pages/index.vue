@@ -91,7 +91,7 @@ export default {
         '#faqs',
         '#contact',
       ],
-      transition: false,
+      preventscroll: false,
     }
   },
   mounted: function () {
@@ -114,30 +114,30 @@ export default {
   methods: {
     resetTransition(delay) {
       setTimeout(() => {
-        this.transition = false
+        this.preventscroll = false
       }, delay)
     },
     scrollTo(index) {
-      this.$router.replace({ hash: this.ids[index] })
+      this.$router.replace({ hash: this.ids[this.ids.indexOf(this.$route.hash) - index] })
     },
     scrollUp() {
-      this.transition = true
-      this.scrollTo(this.ids.indexOf(this.$route.hash) - 1)
+      this.preventscroll = true
+      this.scrollTo(1)
       this.resetTransition(300)
     },
     scrollDown() {
-      this.transition = true
-      this.scrollTo(this.ids.indexOf(this.$route.hash) + 1)
+      this.preventscroll = true
+      this.scrollTo(-1)
       this.resetTransition(300)
     },
     handleScrollEvent(e) {
       if (this.deviceType == 'desktop') {
         e.preventDefault()
       }
-      if (this.deviceType == 'desktop' && this.transition === false) {
-        if (e.deltaY < -50 || e.keyCode === 38) {
+      if (this.deviceType == 'desktop' && this.preventscroll === false) {
+        if (e.deltaY < -300 || e.keyCode === 38) {
           this.scrollUp()
-        } else if (e.deltaY > 50 || e.keyCode === 40) {
+        } else if (e.deltaY > 300 || e.keyCode === 40) {
           this.scrollDown()
         }
       }

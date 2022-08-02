@@ -1,7 +1,7 @@
 <template>
   <!-- prettier-ignore -->
   <section id="faqs" class="w-full min-h-screen bg-white overflow-hidden py-16 px-5 lg:px-32 bg-gif flex flex-col lg:flex-row gap-5 justify-between items-center text-black">
-    <div class="prose lg:prose-xl z-10 mt-32 w-full md:w-1/2">
+    <div class="prose xl:prose-lg z-10 mt-32 w-full md:w-1/2">
       <h1 :class="{'animate__animated animate__fadeInDown animate__delay-03s animate__fast': $route.hash === '#faqs'}">Frequently asked questions<span class="text-indigo-700 ">.</span></h1>
       <div @click="currentQuestion = index" v-for="(faq, index) in faqs" :key="index" :class="{'animate__animated animate__fadeInDown animate__delay-1s animate__fast': $route.hash === '#faqs'}">
         <div class="cursor-pointer border border-gray-300 mb-5 p-5 text-left rounded-xl  w-full">
