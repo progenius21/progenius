@@ -7,7 +7,7 @@
       <a :class="{'animate__animated animate__fadeInDown animate__delay-1s animate__fast': $route.hash === '#about_c'}"  href="http://community.progenius.io" target="_blank"><button class="py-3 px-10 flex gap-5 mt-16 items-center justify-between rounded-full transition bg-indigo-700 hover:bg-indigo-500 text-white font-bold">Join our community</button></a>
     </div>
     <div class="w-full" style="filter:invert(1)">
-      <video autoplay muted loop class="w-2/3 xl:w-full max-w-2xl block m-auto relative bottom-10 xl:bottom-0 xl:float-right" src="/an3.mp4" loading="lazy"></video>
+      <video autoplay muted loop class="w-2/3 xl:w-full max-w-lg 2xl:max-w-2xl block m-auto relative bottom-10 xl:bottom-0 xl:float-right" src="/an3.mp4" loading="lazy"></video>
     </div>
   </section>
 </template>

@@ -11,7 +11,7 @@
       <Contact />
     </div>
     <div
-      class="bullets hidden lg:block"
+      class="hidden 2xl:block bullets"
       :class="{
         light: ['#about', '#faqs', '#about_c'].indexOf($route.hash) > -1,
       }"
@@ -144,9 +144,7 @@ export default {
       }
     },
     scroll(e) {
-      if (this.deviceType == 'desktop' || this.deviceType == 'tablet') {
-        e.preventDefault()
-      }
+      e.preventDefault()
       if(this.allowScroll) {
         this.allowScroll = false
         if (e.wheelDeltaY > 100 && e.wheelDeltaY < 500 || e.keyCode === 38) {
