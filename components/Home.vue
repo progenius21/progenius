@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="w-full min-h-screen overflow-hidden px-5 lg:px-32 block flex flex-col xl:flex-row items-center  text-dark relative" style="background-color:#03030b">
+  <section id="home" class="w-full min-h-screen overflow-hidden px-5 lg:px-32 block flex flex-col xl:flex-row items-center  text-dark relative" style="background-color:#03040b">
     <div class="prose prose-lg prose-invert relative z-10 my-32">
       <h1 class="" :class="{'animate__animated animate__fadeInDown animate__delay-03s animate__fast': !$route.hash}">Introducing Web3.0, Simply<span class="text-indigo-700 ">.</span></h1>
       <p :class="{'animate__animated animate__fadeInDown animate__delay-03s animate__fast': !$route.hash}">We are more than just investors. We are a group of highly-skilled, result-orientated individuals from various professional backgrounds all working towards educating and empowering our community.</p>
@@ -15,7 +15,7 @@
     </div>
     <div class="w-full
     ">
-      <img class="w-2/3 xl:w-full max-w-3xl block m-auto relative bottom-10 xl:float-right" src="/an4.gif" loading="lazy">
+      <video autoplay muted loop class="w-2/3 xl:w-full max-w-3xl block m-auto relative bottom-10 xl:bottom-0 xl:float-right" src="/an3.mp4" loading="lazy"></video>
     </div>
   </section>
 </template>
