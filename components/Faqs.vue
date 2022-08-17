@@ -12,7 +12,7 @@
         </div>
       </div>
     </div>
-    <div class="w-full invert">
+    <div class="w-full" style="filter:invert(1)">
       <img class="w-2/3 xl:w-full max-w-2xl block m-auto relative top-10 xl:float-right" src="/an2.gif" loading="lazy" alt="">
     </div>
   </section>
