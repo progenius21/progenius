@@ -1,5 +1,5 @@
 <template>
-  <div @keydown="handleScrollEvent" @mousewheel="handleScrollEvent">
+  <div @keydown="test" @mousewheel="test">
     <div>
       <Navigation class="fixed top-0 left-0" />
       <Home />
@@ -78,6 +78,7 @@ a {
 }
 </style>
 <script>
+import _ from 'lodash'
 export default {
   data: function () {
     return {
@@ -91,7 +92,7 @@ export default {
         '#faqs',
         '#contact',
       ],
-      preventscroll: false,
+      allowScroll: true,
     }
   },
   mounted: function () {
@@ -131,17 +132,31 @@ export default {
       this.resetTransition(300)
     },
     handleScrollEvent(e) {
-      if (this.deviceType == 'desktop') {
+      if (this.deviceType == 'desktop' || this.deviceType == 'tablet') {
         e.preventDefault()
       }
-      if (this.deviceType == 'desktop' && this.preventscroll === false) {
-        if (e.deltaY < -300 || e.keyCode === 38) {
+      if ((this.deviceType == 'desktop' || this.deviceType == 'tablet') && this.preventscroll === false) {
+        if (e.deltaY < -0 || e.keyCode === 38) {
           this.scrollUp()
-        } else if (e.deltaY > 300 || e.keyCode === 40) {
+        } else if (e.deltaY > 0 || e.keyCode === 40) {
           this.scrollDown()
         }
       }
     },
+    test(e) {
+      e.preventDefault()
+      if(this.allowScroll) {
+        this.allowScroll = false
+        if (e.deltaY < -5 || e.keyCode === 38) {
+          this.scrollUp()
+        } else if (e.deltaY > 5 || e.keyCode === 40) {
+          this.scrollDown()
+        }
+        setTimeout(() => {
+          this.allowScroll = true
+        }, 1500);
+      }
+    }
   },
 }
 </script>
