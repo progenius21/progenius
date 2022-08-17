@@ -15,7 +15,7 @@
     </div>
     <div class="w-full
     ">
-      <img class="w-2/3 xl:w-full max-w-3xl block m-auto relative bottom-10" src="/an4.gif" loading="lazy">
+      <img class="w-2/3 xl:w-full max-w-3xl block m-auto relative bottom-10 xl:float-right" src="/an4.gif" loading="lazy">
     </div>
   </section>
 </template>

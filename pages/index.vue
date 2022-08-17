@@ -1,5 +1,5 @@
 <template>
-  <div @keydown="test" @mousewheel="test">
+  <div @keydown="scroll" @mousewheel="scroll">
     <div>
       <Navigation class="fixed top-0 left-0" />
       <Home />
@@ -119,7 +119,7 @@ export default {
       }, delay)
     },
     scrollTo(index) {
-      this.$router.replace({ hash: this.ids[this.ids.indexOf(this.$route.hash) - index] })
+      this.$router.replace({ hash: this.ids[this.ids.indexOf(this.$route.hash) - index] }).catch(err => {})
     },
     scrollUp() {
       this.preventscroll = true
@@ -136,28 +136,38 @@ export default {
         e.preventDefault()
       }
       if ((this.deviceType == 'desktop' || this.deviceType == 'tablet') && this.preventscroll === false) {
-        if (e.deltaY < -0 || e.keyCode === 38) {
+        if (e.deltaY < -10 || e.keyCode === 38) {
           this.scrollUp()
-        } else if (e.deltaY > 0 || e.keyCode === 40) {
+        } else if (e.deltaY > -10 || e.keyCode === 40) {
           this.scrollDown()
         }
       }
     },
-    test(e) {
+    scroll(e) {
       if (this.deviceType == 'desktop' || this.deviceType == 'tablet') {
         e.preventDefault()
       }
       if(this.allowScroll) {
         this.allowScroll = false
-        if (e.deltaY < -5 || e.keyCode === 38) {
+        if (e.wheelDeltaY > 100 && e.wheelDeltaY < 500 || e.keyCode === 38) {
           this.scrollUp()
-        } else if (e.deltaY > 5 || e.keyCode === 40) {
+          // console.log('DeltaY:', e.deltaY)
+          console.log('WheelDeltaY:', e.wheelDeltaY)
+          console.log('------------------------------------')
+        } else if (e.wheelDeltaY < -100 && e.wheelDeltaY > -500 || e.keyCode === 40) {
           this.scrollDown()
+          // console.log('DeltaY:', e.deltaY)
+          console.log('WheelDeltaY:', e.wheelDeltaY)
+          console.log('------------------------------------')
         }
         setTimeout(() => {
           this.allowScroll = true
-        }, 1350);
+        }, 500);
       }
+    },
+    test(e) {
+      console.log(e.deltaY)
+      console.log(e.wheelDeltaY)
     }
   },
 }
