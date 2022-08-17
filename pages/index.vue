@@ -144,7 +144,9 @@ export default {
       }
     },
     test(e) {
-      e.preventDefault()
+      if (this.deviceType == 'desktop' || this.deviceType == 'tablet') {
+        e.preventDefault()
+      }
       if(this.allowScroll) {
         this.allowScroll = false
         if (e.deltaY < -5 || e.keyCode === 38) {
@@ -154,7 +156,7 @@ export default {
         }
         setTimeout(() => {
           this.allowScroll = true
-        }, 1500);
+        }, 1350);
       }
     }
   },
