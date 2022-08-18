@@ -1,6 +1,6 @@
 <template>
   <!-- prettier-ignore -->
-  <section id="about_c" class="w-full min-h-screen overflow-hidden px-5 lg:px-32 block flex flex-col-reverse xl:flex-row items-center justify-between text-dark relative" style="background-color:#fbfcf4">
+  <section id="about_c" class="w-full min-h-screen overflow-hidden px-5 lg:px-32 block flex flex-col-reverse xl:flex-row items-center justify-between text-dark relative" style="background-color:#fdfef3">
     <div class="prose xl:prose-md relative z-10 mb-32 mt-10 xl:my-32">
       <h1 :class="{'animate__animated animate__fadeInDown animate__delay-03s animate__fast': $route.hash === '#about_c'}">Are You Ready For The Digital Age?</h1>
       <p :class="{'animate__animated animate__fadeInDown animate__delay-03s animate__fast': $route.hash === '#about_c'}">Join our community to start networking and learning. Join our public telegram with the link below.</p>
