@@ -3,7 +3,7 @@
     <contact-popup v-if="showPopup" @closed="showPopup = false" />
     <!-- prettier-ignore -->
     <section id="contact" class="w-full h-screen bg-black overflow-hidden py-16 px-5 lg:px-32 bg-gif xl:flex flex-col-reverse lg:flex-row justify-between items-end text-white relative" style="background-color:#03040b">
-    <div class="prose xl:prose-lg prose-invert relative z-10 h-2/3 relative mt-16 lg:mt-0">
+    <div class="prose xl:prose-md prose-invert relative z-10 h-2/3 relative mt-16 lg:mt-0">
       <h1 :class="{'animate__animated animate__fadeInDown animate__delay-03s': $route.hash === '#contact'}">Get in touch<span class="text-indigo-700">.</span></h1>
       <p :class="{'animate__animated animate__fadeInDown animate__delay-03s': $route.hash === '#contact'}">If you are as curious as we are, want to build something interesting that this space needs, and are looking for a partner who will strive to make it a success, get in touch. We'd love to collaborate.</p>
       <button :class="{'animate__animated animate__fadeInDown animate__delay-1s animate__fast': $route.hash === '#contact'}" @click="showPopup = true" class="block py-3 px-10 flex gap-5 mt-16 items-center justify-between rounded-full transition bg-indigo-700 hover:bg-indigo-500 text-white font-bold">Contact us</button>
