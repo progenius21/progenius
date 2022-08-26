@@ -150,8 +150,7 @@ export default {
       }, 1000);
     },
     scroll(e) {
-      console.log(e.wheelDeltaY, e.deltaY)
-      if(e.timeStamp - this.ts >= 100) {
+      if(e.timeStamp - this.ts >= 70) {
         if (e.deltaY < -0) {
           this.scrollUp()
         } else if (e.deltaY > 0) {
