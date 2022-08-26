@@ -13,7 +13,9 @@
       </div>
     </div>
     <div class="hidden 2xl:block w-full" style="filter:invert(1)">
-      <video autoplay muted loop class="w-2/3 xl:w-full max-w-2xl block m-auto relative xl:float-right" src="/an3.mp4" loading="lazy"></video>
+      <video autoplay muted loop class="w-2/3 xl:w-full max-w-2xl block m-auto relative xl:float-right" loading="lazy">
+        <source src="/an3.mp4" type="video/mp4">
+      </video>
     </div>
   </section>
 </template>

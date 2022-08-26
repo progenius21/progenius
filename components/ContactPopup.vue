@@ -19,7 +19,7 @@
     <form v-else @submit.prevent="submit" class="mt-16">
       <div class="field mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="fname">Full name</label>
-        <input
+        <input required
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500"
           type="text"
           id="fname"
@@ -27,7 +27,7 @@
       </div>
       <div class="field mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
-        <input
+        <input required
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500"
           type="email"
           id="email"
@@ -35,7 +35,7 @@
       </div>
       <div class="field mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">Phone</label>
-        <input
+        <input required
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500"
           type="phone"
           id="phone"
@@ -43,7 +43,7 @@
       </div>
       <div class="field mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="subject">Subject</label>
-        <input
+        <input required
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500"
           type="text"
           id="subject"
@@ -51,7 +51,7 @@
       </div>
       <div class="field mb-4">
         <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Message</label>
-        <textarea
+        <textarea required
           class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline focus:border-indigo-500"
           name="message"
           id="message"

@@ -15,7 +15,9 @@
     </div>
     <div class="w-full
     ">
-      <video autoplay muted loop class="w-full max-w-3xl block m-auto top-10 xl:top-0 relative xl:float-right" src="/an3.mp4" loading="lazy"></video>
+      <video autoplay muted loop class="w-full max-w-3xl block m-auto top-10 xl:top-0 relative xl:float-right" loading="lazy">
+        <source src="/an3.mp4" type="video/mp4">
+      </video>
     </div>
   </section>
 </template>

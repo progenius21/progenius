@@ -1,5 +1,5 @@
 <template>
-  <div @keydown="scroll" @mousewheel="scroll">
+  <div @wheel.prevent="scroll">
     <div>
       <Navigation class="fixed top-0 left-0" />
       <Home />
@@ -78,10 +78,13 @@ a {
 }
 </style>
 <script>
+import { is } from '@babel/types';
 import _ from 'lodash'
+import { Promise } from 'q';
 export default {
   data: function () {
     return {
+      ts: 0,
       isNotMobile: false,
       ids: [
         '',
@@ -96,10 +99,19 @@ export default {
     }
   },
   mounted: function () {
+    let isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
     this.isNotMobile = window.innerWidth > 1280
     if(this.deviceType != 'desktop') {
       document.documentElement.style.overflow = 'unset'
     }
+    addEventListener('keydown', (e) => {
+      if(e.key == "ArrowUp") {
+        this.scrollUp()
+      }
+      if(e.key == "ArrowDown") {
+        this.scrollDown()
+      }
+    })
   },
   computed: {
     deviceType: function () {
@@ -113,59 +125,43 @@ export default {
     }
   },
   methods: {
-    resetTransition(delay) {
-      setTimeout(() => {
-        this.preventscroll = false
-      }, delay)
-    },
     scrollTo(index) {
       this.$router.replace({ hash: this.ids[this.ids.indexOf(this.$route.hash) - index] }).catch(err => {})
     },
     scrollUp() {
-      this.preventscroll = true
       this.scrollTo(1)
-      this.resetTransition(300)
     },
     scrollDown() {
-      this.preventscroll = true
       this.scrollTo(-1)
-      this.resetTransition(300)
-    },
-    handleScrollEvent(e) {
-      if (this.deviceType == 'desktop' || this.deviceType == 'tablet') {
-        e.preventDefault()
-      }
-      if ((this.deviceType == 'desktop' || this.deviceType == 'tablet') && this.preventscroll === false) {
-        if (e.deltaY < -10 || e.keyCode === 38) {
-          this.scrollUp()
-        } else if (e.deltaY > -10 || e.keyCode === 40) {
-          this.scrollDown()
-        }
-      }
-    },
-    scroll(e) {
-      e.preventDefault()
-      if(this.allowScroll) {
-        this.allowScroll = false
-        if (e.wheelDeltaY > 100 && e.wheelDeltaY < 500 || e.keyCode === 38) {
-          this.scrollUp()
-          // console.log('DeltaY:', e.deltaY)
-          console.log('WheelDeltaY:', e.wheelDeltaY)
-          console.log('------------------------------------')
-        } else if (e.wheelDeltaY < -100 && e.wheelDeltaY > -500 || e.keyCode === 40) {
-          this.scrollDown()
-          // console.log('DeltaY:', e.deltaY)
-          console.log('WheelDeltaY:', e.wheelDeltaY)
-          console.log('------------------------------------')
-        }
-        setTimeout(() => {
-          this.allowScroll = true
-        }, 500);
-      }
     },
     test(e) {
-      console.log(e.deltaY)
-      console.log(e.wheelDeltaY)
+      e.preventDefault()
+      setTimeout(() => {
+        if(this.allowScroll) {
+          this.allowScroll = false
+          if (e.deltaY < -0) {
+            this.scrollUp()
+            this.allowScroll = true
+          } else if (e.deltaY > 0) {
+            this.scrollDown()
+            this.allowScroll = true
+          }
+        }
+      }, 1000);
+    },
+    scroll(e) {
+      console.log(e.wheelDeltaY, e.deltaY)
+      if(e.timeStamp - this.ts >= 100) {
+        if (e.deltaY < -0) {
+          this.scrollUp()
+        } else if (e.deltaY > 0) {
+          this.scrollDown()
+        }
+      } else {
+        this.ts = 0
+      }
+      // console.log(e.timeStamp - this.ts)
+      this.ts = e.timeStamp - 15
     }
   },
 }
