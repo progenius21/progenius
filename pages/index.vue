@@ -51,6 +51,9 @@ body {
 a {
   text-decoration: none!important;
 }
+video {
+  pointer-events: none;
+}
 .bullets {
   position: fixed;
   right: 80px;
