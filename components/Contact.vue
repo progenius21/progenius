@@ -22,7 +22,7 @@
       </div>
     </div>
     <div class="w-full md:w-1/2 absolute bottom-0 right-0">
-      <video controls="false" playsinline autoplay muted loop class="w-full" src="/an.mp4" >
+      <video  style="pointer-events: none;" playsinline autoplay muted loop class="w-full" src="/an.mp4" >
         <source src="/an.mp4" type="video/mp4">
       </video>
     </div>

@@ -7,7 +7,7 @@
       <a href="http://community.progenius.io" :class="{'animate__animated animate__fadeInDown animate__delay-1s animate__fast': $route.hash === '#about'}" to="/#contact"><button class="py-3 px-10 flex gap-5 mt-8 items-center justify-between rounded-full transition bg-indigo-700 hover:bg-indigo-500 text-white font-bold">Join community</button></a>
     </div>
     <div class="w-full" style="filter:invert(1)">
-      <video controls="false" playsinline autoplay muted loop class="w-full max-w-3xl block m-auto relative mt-10 xl:float-right" loading="lazy">
+      <video style="pointer-events: none;" playsinline autoplay muted loop class="w-full max-w-3xl block m-auto relative mt-10 xl:float-right" >
          <source src="/an4.mp4" type="video/mp4">
       </video>
     </div>
