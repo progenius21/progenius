@@ -3,7 +3,7 @@ import tailwindTypography from '@tailwindcss/typography'
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   server: {
-    host: '0'
+    host: '0.0.0.0'
   },
   head: {
     title: 'Professional Genius',
