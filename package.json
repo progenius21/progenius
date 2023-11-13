@@ -14,7 +14,7 @@
   "dependencies": {
     "@nuxt/content": "^1.15.1",
     "@nuxtjs/axios": "^5.13.6",
-    "@tailwindcss/typography": "^0.5.2",
+    "@tailwindcss/typography": "^0.5.10",
     "animate.css": "^4.1.1",
     "core-js": "^3.19.3",
     "hooper": "^0.3.4",
@@ -28,7 +28,7 @@
   },
   "devDependencies": {
     "@nuxtjs/device": "^2.1.0",
-    "@nuxtjs/tailwindcss": "^4.2.1",
+    "@nuxtjs/tailwindcss": "^6.9.4",
     "eslint-config-prettier": "^8.3.0",
     "install": "^0.13.0",
     "npm": "^8.11.0",

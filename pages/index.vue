@@ -81,7 +81,7 @@ a {
 <script>
 import { is } from '@babel/types';
 import _ from 'lodash'
-import { Promise } from 'q';
+//import { Promise } from 'q';
 export default {
   data: function () {
     return {

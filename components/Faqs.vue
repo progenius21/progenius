@@ -2,7 +2,7 @@
   <!-- prettier-ignore -->
   <section id="faqs" class="w-full min-h-screen overflow-hidden px-5 lg:px-32 block flex items-center justify-between text-dark relative" style="background-color:#fdfef3">
     <div class="prose xl:prose-md relative z-10 w-full md:w-1/2 m-auto 2xl:mx-0">
-      <h1 :class="{'animate__animated animate__fadeInDown animate__delay-03s animate__fast': $route.hash === '#faqs'}">Frequently asked questions<span class="text-indigo-700 ">.</span></h1>
+      <h1 :class="{'animate__animated animate__fadeInDown animate__delay-03s animate__fast': $route.hash === '#faqs'}">Commonly asked questions about the network, membership benefits, and investment process<span class="text-indigo-700 ">.</span></h1>
       <div @click="currentQuestion = index" v-for="(faq, index) in faqs" :key="index" :class="{'animate__animated animate__fadeInDown animate__delay-1s animate__fast': $route.hash === '#faqs'}">
         <div class="cursor-pointer border border-gray-300 mb-5 p-5 text-left rounded-xl  w-full">
           <span class="font-medium">{{ faq.question }}</span>
