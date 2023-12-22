@@ -13,6 +13,7 @@
       <a href="http://community.progenius.io">Community</a>
       <NuxtLink to="/#faqs">FAQs</NuxtLink>
       <NuxtLink to="/#contact">Contact</NuxtLink>
+      <NuxtLink to="blog.progenius.io">Blog</NuxtLink>
     </nav>
     <a href="http://community.progenius.io" class="cta py-3 px-10  gap-5 items-center justify-between rounded-full transition bg-indigo-700 hover:bg-indigo-500 text-white font-bold">
       <span>Join community</span>
@@ -29,6 +30,7 @@
         <a href="http://community.progenius.io">Community</a>
         <NuxtLink to="/#faqs">FAQs</NuxtLink>
         <NuxtLink to="/#contact">Contact</NuxtLink>
+        <NuxtLink to="blog.progenius.io">Blog</NuxtLink>
       </nav>
     </div>
   </header>
@@ -39,23 +41,23 @@ export default {
     return {
       showLogo: true,
       showMobileMenu: false,
-    }
+    };
   },
   mounted: function () {
-    this.showLogo = window.scrollY < 100
-    window.addEventListener('scroll', this.updateShowLogo)
+    this.showLogo = window.scrollY < 100;
+    window.addEventListener("scroll", this.updateShowLogo);
   },
   watch: {
     $route(to, from) {
-      this.showMobileMenu = false
+      this.showMobileMenu = false;
     },
   },
   methods: {
     updateShowLogo: function (e) {
-      this.showLogo = e.path[1].scrollY < 100
+      this.showLogo = e.path[1].scrollY < 100;
     },
   },
-}
+};
 </script>
 <style scoped>
 nav a {
@@ -84,24 +86,23 @@ nav.mobile a.nuxt-link-exact-active {
   font-weight: bold;
 }
 .cta {
-  display: flex
+  display: flex;
 }
 .burger {
-  display: none
+  display: none;
 }
 .navigation-menu {
-  display: flex
+  display: flex;
 }
-@media (max-width: 1320px) { 
+@media (max-width: 1320px) {
   .navigation-menu {
-    display: none
+    display: none;
   }
-  .burger{
-    display: flex
+  .burger {
+    display: flex;
   }
   .cta {
-    display: none
+    display: none;
   }
 }
-
 </style>
